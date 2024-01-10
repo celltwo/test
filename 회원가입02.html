@@ -44,12 +44,58 @@
 				<!-- 추천인 시 출력 텍스트 -->
 				<!-- <p class="txt1">평가모음 사용을 위해 아래 정보를 입력해 주세요.</p> -->
 
-				<div class="join_method">
-					<a href="#" class="ic1">카카오톡으로 가압하기</a>
-					<a href="#" class="ic2">구글로 가입하기</a>
-					<a href="#" class="ic3">페이스북으로 가입하기</a>
-					<a href="#" class="ic4">이메일로 가입하기</a>
+				<fieldset class="frm_input1">
+					<legend>회원가입 입력</legend>
+					<label for="" id="" class="txt_label">이름</label>
+					<input id="" type="text" class="border-type1" value="" placeholder="" />
+
+					<label for="" id="" class="txt_label">이메일</label>
+					<input id="" type="text" class="border-type1" value="" placeholder="" />
+
+					<label for="" id="" class="txt_label">비밀번호</label>
+					<input id="" type="password" class="border-type1" value="" placeholder="알파벳, 숫자, 특수문자 포함 8~20자리" />
+					<!-- 
+						class="hide_password"  (비밀번호 안 보이게 -눈깔 있는 상태)
+						class="hide_password _hide"  (비밀번호 보이게 -눈깔 없는 상태)
+						-->
+					<button class="hide_password">비밀번호 숨기기</button>   
+
+					<label for="" id="" class="txt_label">추천인</label>
+					<input id="" type="text" class="border-type1" value="" placeholder="" />
+
+					<div class="txt_row">
+						<span class="checkbox_ui type1">
+							<input type="checkbox" id="agree_all" name="">
+							<label for="agree_all">전체 동의</label>
+						</span>
+					</div>
+					<div class="txt_row">
+						<span class="checkbox_ui type2">
+							<input type="checkbox" id="agree_txt1" name="">
+							<label for="agree_txt1">(필수) 이용약관 및 개인정보 처리방침 동의</label>
+						</span>
+						<span class="arrow">약관보기</span>
+					</div>
+					<div class="txt_row">
+						<span class="checkbox_ui type2">
+							<input type="checkbox" id="agree_txt2" name="">
+							<label for="agree_txt2">(필수) 개인정보 수집 및 이용에 동의</label>
+						</span>
+						<span class="arrow">약관보기</span>
+					</div>
+					<div class="txt_row">							
+						<span class="checkbox_ui type2">
+							<input type="checkbox" id="agree_txt3" name="">
+							<label for="agree_txt3">(필수) 만 18세 이상입니다</label>
+						</span>
+					</div>
+				</fieldset>
+
+				<div class="wrap_btn">
+					<button class="type1">회원가입</button>
 				</div>
+
+
 
 			</div>
 			<!-- //e -->

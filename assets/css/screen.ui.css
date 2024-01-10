@@ -69,6 +69,7 @@ a {
   text-decoration: none;
   outline-style: none;
   cursor: pointer;
+  color: #4179ff;
 }
 
 a:hover {
@@ -134,7 +135,7 @@ a, a > span, button, button > span {
   height: 100vh;
 }
 .wrap_template.bg_visual1::before {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 0;
@@ -147,7 +148,23 @@ a, a > span, button, button > span {
   display: block;
   width: 50%;
   height: 100%;
-  content: " ";
+  content: "";
+}
+.wrap_template.bg_visual2::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url("../image/visual2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  width: 50%;
+  height: 100%;
+  content: "";
 }
 
 /* 컨텐츠 wrap */
@@ -226,6 +243,8 @@ a, a > span, button, button > span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .wrap_section .wrap_contents .member_join {
   width: 416px;
@@ -349,6 +368,112 @@ a, a > span, button, button > span {
   display: inline-block;
   content: "OR";
 }
+.wrap_section .wrap_contents .exnumber_reg {
+  width: 416px;
+  text-align: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-top: 120px;
+  /* semantic select custom */
+  /* //semantic select custom */
+}
+.wrap_section .wrap_contents .exnumber_reg .ui.selection.dropdown {
+  border-radius: 8px;
+  border: solid 1px #e8ecef;
+  background-color: #fff;
+  min-height: 48px;
+}
+.wrap_section .wrap_contents .exnumber_reg .ui.selection.dropdown > .delete.icon,
+.wrap_section .wrap_contents .exnumber_reg .ui.selection.dropdown > .dropdown.icon,
+.wrap_section .wrap_contents .exnumber_reg .ui.selection.dropdown > .search.icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  background-image: url("../image/bu2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+.wrap_section .wrap_contents .exnumber_reg .ui.dropdown > .dropdown.icon:before {
+  content: "";
+}
+.wrap_section .wrap_contents .exnumber_reg .ui.search.dropdown > .text {
+  top: 2px;
+}
+.wrap_section .wrap_contents .exnumber_reg .ui.selection.active.dropdown:hover .menu {
+  border-color: #e8ecef;
+}
+
+.frm_input1 .txt_label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c737e;
+  font-family: "SUIT";
+  display: block;
+  text-align: left;
+  margin: 20px 0 8px 0;
+}
+.frm_input1 .border-type1 {
+  width: 100%;
+}
+.frm_input1 .txt_row {
+  text-align: left;
+  display: block;
+  margin-top: 16px;
+  position: relative;
+}
+.frm_input1 .txt_row .arrow {
+  position: absolute;
+  top: -3px;
+  right: 0;
+  z-index: 2;
+  background-image: url("../image/bu1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  text-indent: -99999em;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-size: contain;
+  cursor: pointer;
+}
+.frm_input1 button.hide_password {
+  width: 100%;
+  height: 0px;
+  font-size: 0;
+  line-height: 0;
+  border: 0;
+  background: transparent;
+  position: relative;
+  display: block;
+}
+.frm_input1 button.hide_password::after {
+  position: absolute;
+  top: -54px;
+  right: 15px;
+  z-index: 2;
+  background-image: url("../image/ic_password.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  content: " ";
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-size: contain;
+  cursor: pointer;
+}
+.frm_input1 button.hide_password._hide::after {
+  display: none;
+}
 
 /* Input style */
 input[type=text], input[type=password], input[type=email] {
@@ -356,16 +481,31 @@ input[type=text], input[type=password], input[type=email] {
 }
 input[type=text].border-type1, input[type=password].border-type1, input[type=email].border-type1 {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: #000;
   font-family: "SUIT";
   border-radius: 8px;
   border: solid 1px #e8ecef;
   background-color: #fff;
-  min-height: 36px;
-  line-height: 36px;
-  padding-left: 10px;
-  padding-right: 10px;
+  min-height: 48px;
+  line-height: 46px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+input[type=text].border-type1:focus, input[type=password].border-type1:focus, input[type=email].border-type1:focus {
+  border-color: #bcd0ff;
+}
+input[type=text].border-type1::-webkit-input-placeholder, input[type=password].border-type1::-webkit-input-placeholder, input[type=email].border-type1::-webkit-input-placeholder {
+  color: #aeb3b9;
+}
+input[type=text].border-type1::-moz-placeholder, input[type=password].border-type1::-moz-placeholder, input[type=email].border-type1::-moz-placeholder {
+  color: #aeb3b9;
+}
+input[type=text].border-type1::-ms-input-placeholder, input[type=password].border-type1::-ms-input-placeholder, input[type=email].border-type1::-ms-input-placeholder {
+  color: #aeb3b9;
+}
+input[type=text].border-type1::placeholder, input[type=password].border-type1::placeholder, input[type=email].border-type1::placeholder {
+  color: #aeb3b9;
 }
 input[type=text]:disabled, input[type=password]:disabled, input[type=email]:disabled {
   background-color: #f7f7f7;
@@ -385,11 +525,191 @@ input[type=text]:disabled::placeholder, input[type=password]:disabled::placehold
 }
 
 /* //Input style */
+/*********** checkbox ***********/
+.checkbox_ui {
+  display: inline-table;
+}
+.checkbox_ui label {
+  display: inline-block;
+  background-image: none;
+  background-repeat: no-repeat;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.checkbox_ui input[type=checkbox] {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+.checkbox_ui.type1 input[type=checkbox] + label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  font-family: "SUIT";
+  width: auto;
+  height: auto;
+  color: #000;
+  line-height: 1.6;
+  padding-left: 39px;
+  cursor: pointer;
+  position: relative;
+}
+.checkbox_ui.type1 input[type=checkbox] + label:before {
+  background-image: url("../image/ic_check1_off.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: -1px;
+}
+.checkbox_ui.type1 input[type=checkbox]:checked + label {
+  color: #000;
+}
+.checkbox_ui.type1 input[type=checkbox]:checked + label:before {
+  background-image: url("../image/ic_check1_on.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+.checkbox_ui.type2 input[type=checkbox] + label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #505760;
+  font-family: "SUIT";
+  width: auto;
+  height: auto;
+  color: #000;
+  line-height: 1.6;
+  padding-left: 39px;
+  cursor: pointer;
+  position: relative;
+}
+.checkbox_ui.type2 input[type=checkbox] + label:before {
+  background-image: url("../image/ic_check2_off.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: -1px;
+}
+.checkbox_ui.type2 input[type=checkbox]:checked + label {
+  color: #000;
+}
+.checkbox_ui.type2 input[type=checkbox]:checked + label:before {
+  background-image: url("../image/ic_check2_on.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+
 /* button style */
 .wrap_btn {
   display: block;
-  padding-top: 40px;
+  margin-top: 40px;
   text-align: center;
+}
+.wrap_btn .type1 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  font-family: "SUIT";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #1c232f;
+  width: 100%;
+  min-height: 56px;
+  border-radius: 8px;
+  border: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+/* tab style */
+.wrap_tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+.wrap_tab.cnt2 .menu {
+  width: calc(50% - 4px);
+  margin-left: 4px;
+}
+.wrap_tab.cnt2 .menu:first-of-type {
+  margin-left: 0;
+}
+.wrap_tab.cnt1 .menu {
+  width: 100%;
+}
+.wrap_tab .menu {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4c545f;
+  font-family: "SUIT";
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border: 0;
+  background-color: #ccd0d4;
+  border-radius: 12px 12px 0 0;
+  min-height: 56px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+.wrap_tab .menu.on {
+  background-color: #1c232f;
+  color: #fff;
+}
+
+.tab_container {
+  display: block;
+}
+.tab_container .txt1 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6c737e;
+  font-family: "SUIT";
+  display: block;
+  padding-top: 20px;
+}
+.tab_container .txt1 a {
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: 600;
 }
 
 .dim_guide {
